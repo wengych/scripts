@@ -6,6 +6,7 @@ USERNAME="wengych"
 # 指定API URL
 API_URL="https://api.github.com/users/$USERNAME/keys"
 
+sudo apt install jq -y
 # 使用curl从GitHub API获取公钥，并使用jq解析公钥数据
 curl -s "$API_URL" | jq -r '.[].key' > /tmp/github_keys
 
